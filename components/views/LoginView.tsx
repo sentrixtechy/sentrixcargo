@@ -8,6 +8,7 @@ import { Package, Globe, ShieldCheck, Mail, Lock } from "lucide-react";
 import { signInWithGoogle, loginWithEmail, signUpWithEmail } from "@/lib/firebase";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LoginView() {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -181,6 +182,22 @@ export default function LoginView() {
                 <ShieldCheck className="h-4 w-4" />
                 Zero-Trust
               </div>
+            </div>
+
+            <div className="text-center mt-6 space-y-2">
+              <p className="text-xs text-slate-500">
+                By logging in, you agree to our{" "}
+                <Link href="/terms" className="text-sky-400 hover:text-sky-300 underline underline-offset-2">
+                  Terms of Service
+                </Link>{" "}
+                and{" "}
+                <Link href="/privacy" className="text-sky-400 hover:text-sky-300 underline underline-offset-2">
+                  Privacy Policy
+                </Link>.
+              </p>
+              <p className="text-[11px] text-slate-600">
+                Need help? <a href="mailto:support@sentrixcargo.com" className="hover:text-slate-400 transition-colors">support@sentrixcargo.com</a>
+              </p>
             </div>
           </CardContent>
         </Card>

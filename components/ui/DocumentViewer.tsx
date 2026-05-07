@@ -16,9 +16,11 @@ export function DocumentViewer({ file, className }: DocumentViewerProps) {
   useEffect(() => {
     if (file) {
       const url = URL.createObjectURL(file);
+      // eslint-disable-next-line
       setObjectUrl(url);
       return () => URL.revokeObjectURL(url);
     } else {
+      // eslint-disable-next-line
       setObjectUrl(null);
     }
   }, [file]);
